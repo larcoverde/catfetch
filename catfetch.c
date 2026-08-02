@@ -1,8 +1,10 @@
 // print a simple fetch with a cat ascii
 // by Lucas Arcoverde de Melo, August 2nd 2026
 
+#include <unistd.h>
+
 struct
-sys_info
+SysInfo
 {
     char user[256];
     char hostname[256];
