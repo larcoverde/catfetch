@@ -27,6 +27,6 @@ int
 main(void)
 {
     SysInfo sys_info;
-    return 0;
+    return EXIT_SUCCESS;
 }
 
