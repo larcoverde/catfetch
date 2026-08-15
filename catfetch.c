@@ -19,7 +19,8 @@ typedef struct
 int
 get_user(SysInfo sys_info)
 {
-    getlogin_r(sys_info.user, sizeof(sys_info.user));
+    if (getlogin_r(sys_info.user, sizeof(sys_info.user)) != 0)
+        return EXIT_FAILURE;
     return EXIT_SUCCESS;
 }
 
