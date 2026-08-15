@@ -33,6 +33,15 @@ get_host(SysInfo sys_info)
 }
 
 int
+get_os(SysInfo sys_info)
+{
+    FILE * file = fopen("/etc/os-release", "r");
+
+    fclose(file);
+    return EXIT_SUCCESS;
+}
+
+int
 main(void)
 {
     SysInfo sys_info;
