@@ -18,6 +18,7 @@ SysInfo
 int
 main(void)
 {
+    struct SysInfo sys_info;
     return 0;
 }
 
