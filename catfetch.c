@@ -5,8 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct
-SysInfo
+typedef struct
 {
     char user[256];
     char hostname[256];
@@ -15,10 +14,10 @@ SysInfo
     long up;
     long ram_total;
     long ram_avail;
-};
+} SysInfo;
 
 int
-get_user(struct SysInfo sys_info)
+get_user(SysInfo sys_info)
 {
     getlogin_r(sys_info.user, sizeof(sys_info.user));
     return EXIT_SUCCESS;
@@ -27,7 +26,7 @@ get_user(struct SysInfo sys_info)
 int
 main(void)
 {
-    struct SysInfo sys_info;
+    SysInfo sys_info;
     return 0;
 }
 
