@@ -2,6 +2,8 @@
 // by Lucas Arcoverde de Melo, August 2nd 2026
 
 #include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 struct
 SysInfo
@@ -14,6 +16,13 @@ SysInfo
     long ram_total;
     long ram_avail;
 };
+
+int
+get_user(struct SysInfo sys_info)
+{
+    getlogin_r(sys_info.user, sizeof(sys_info.user));
+    return EXIT_SUCCESS;
+}
 
 int
 main(void)
