@@ -25,6 +25,14 @@ get_user(SysInfo sys_info)
 }
 
 int
+get_host(SysInfo sys_info)
+{
+    if (gethostname(sys_info.hostname, sizeof(sys_info.hostname)) != 0)
+        return EXIT_FAILURE;
+    return EXIT_SUCCESS;
+}
+
+int
 main(void)
 {
     SysInfo sys_info;
