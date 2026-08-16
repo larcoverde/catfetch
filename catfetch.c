@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 typedef struct
 {
@@ -35,8 +36,10 @@ get_host(SysInfo sys_info)
 int
 get_os(SysInfo sys_info)
 {
-    FILE * file = fopen("/etc/os-release", "r");
-
+    FILE * file = fopen("/etc/issue", "r");
+    char line[256];
+    while(fgets(line, sizeof(line), file))
+            strcpy(sys_info.os, line);
     fclose(file);
     return EXIT_SUCCESS;
 }
